@@ -20,10 +20,10 @@ export default function Navbar(){
     return(
         <>
             <div className='flex space-x-4 justify-center pt-3'>
-                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover">home</h4>
-                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover">about me</h4>
-                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover">projects</h4>
-                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover">contact</h4>
+                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover cursor-pointer">home</h4>
+                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover cursor-pointer">about me</h4>
+                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover cursor-pointer">projects</h4>
+                <h4 className="inline scroll-m-20 text-xl font-semibold tracking-tight hover:text-accent-hover cursor-pointer">contact</h4>
                 <Button variant="outline" size="icon" onClick={() => handleButtonPress()}>
                     <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                     <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
