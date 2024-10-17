@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import {Button} from "@/components/ui/button.tsx"
 import {ReaderIcon} from "@radix-ui/react-icons"
 import dynamic from 'next/dynamic';
-/* import animation from "@/assets/animation.json";  */
 // Dynamically import the Player component
 const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), {
     ssr: false
