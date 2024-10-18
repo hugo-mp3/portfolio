@@ -1,21 +1,12 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {Button} from "@/components/ui/button.tsx"
 import {ReaderIcon} from "@radix-ui/react-icons"
-import dynamic from 'next/dynamic';
-// Dynamically import the Player component only on the client side
-const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), {
-    ssr: false
-  });
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
   
 
 export default function Intro(){
-    const [isClient, setIsClient] = useState(false);
-
-    // Ensure the component only runs on the client-side
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
     return(
         <>
             <div className="flex items-center justify-start space-x-10">
@@ -27,18 +18,14 @@ export default function Intro(){
                         <ReaderIcon className="mr-2 h-4 w-4" /> Download Resume
                     </Button>
                 </div>
-
-                {/* Lottie Animation - only rendered client-side */}
-                {isClient && (
-                <div className="w-full max-w-md">
-                    <Player
-                    autoplay
+                {/* New DotLottie animation implementation */}
+                <DotLottieReact
+                    src="https://lottie.host/faa9004e-c6ab-4d25-9cda-65f392df45ea/hW09IBOedm.lottie"
                     loop
-                    src="https://lottie.host/1756b570-c79c-46eb-89d4-b7f1d98f079e/Dj1EDz0yjZ.json"
-                    style={{ height: '300px', width: '300px' }} // Adjust the size as needed
-                    />
-                </div>
-                )}
+                    autoplay
+                    style={{ height: '300px', width: '300px' }}
+                    className=''
+                />
 
             </div>
             
