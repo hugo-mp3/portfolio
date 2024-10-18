@@ -16,7 +16,7 @@ export default function AboutMe(){
     return(
         <>
             {isClient && (
-                <div className='flex w-full absolute -mt-14 left-0'>
+                <div className='flex w-full absolute -mt-14 left-0 border-b-2 border-accent-hover'>
                     <Player
                     autoplay
                     loop
