@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import { FaHtml5, FaCss3Alt, FaReact, FaPython, FaJava, FaNode, FaWindows, FaLinux } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
