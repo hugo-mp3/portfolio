@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { FaHtml5, FaCss3Alt, FaReact, FaPython, FaJava, FaNode, FaWindows, FaLinux } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
@@ -13,11 +14,11 @@ import { GrDocker } from "react-icons/gr";
 
 
 
-
 export default function SkillsAndTools(){
+
     return(
         <>
-            <div className='text-center relative pt-44'>
+            <div className='text-center relative pt-20 z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
                 <div className='grid grid-cols-4 justify-items-center gap-x-2 gap-y-8 mb-10 mt-10 mr-32'>
                     <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500'/>
