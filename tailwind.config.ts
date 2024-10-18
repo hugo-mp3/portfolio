@@ -35,7 +35,8 @@ const config: Config = {
   			accent: {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))',
-				hover: 'hsl(var(--accent-hover))'
+				hover: 'hsl(var(--accent-hover))',
+				border: 'hsl(var(--accent-border))'
   			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
