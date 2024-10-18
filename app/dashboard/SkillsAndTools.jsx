@@ -17,9 +17,9 @@ import { GrDocker } from "react-icons/gr";
 export default function SkillsAndTools(){
     return(
         <>
-            <div>
+            <div className='text-center relative pt-24'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
-                <div className='grid grid-cols-4 gap-3'>
+                <div className='grid grid-cols-4 justify-items-center gap-x-2 gap-y-8 m-20'>
                     <FaHtml5 />
                     <FaCss3Alt />
                     <FaReact />
