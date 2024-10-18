@@ -16,11 +16,13 @@ export default function AboutMe(){
     return(
         <>
             {isClient && (
-                <div className='w-full absolute'>
+                <div className='flex w-full absolute -mt-14 left-0'>
                     <Player
                     autoplay
                     loop
-                    src="https://lottie.host/57eedb65-da8a-49c7-a64a-4c56748a74ce/BVUH8QwboT.json"
+                    /* src="https://lottie.host/57eedb65-da8a-49c7-a64a-4c56748a74ce/BVUH8QwboT.json" */ /* moving lines across screen animation */
+                    /* src = "https://lottie.host/9c112a39-9c14-4664-9be3-e32ad29619fd/phhXPdnfFD.json" */ /* fish jumping out of pond */
+                    src = "https://lottie.host/efa8049a-7ad6-4c84-bf8d-db300b9fad8f/WWzkk3aIUq.json"
                     style={{ height: '400px', width: '100%'}}
                     className="z-0 object-cover"
                     />
