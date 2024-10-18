@@ -1,33 +1,21 @@
 "use client"
-import React,{useEffect, useState} from 'react';
-import dynamic from 'next/dynamic'
+import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player),{
-    ssr: false
-})
 
 export default function AboutMe(){
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, [])
-
     return(
         <>
-            {isClient && (
-                <div className='flex w-full absolute -mt-14 left-0 border-b-2 border-accent-border'>
-                    <Player
-                    autoplay
+            {/* New DotLottie animation implementation */}
+            <div className='flex -left-36 w-screen absolute -mt-14'>
+                <DotLottieReact
+                    src="https://lottie.host/871841d3-07bf-40cf-90bc-929e1d3f901d/BWxKrwmaJU.lottie"
                     loop
-                    /* src="https://lottie.host/57eedb65-da8a-49c7-a64a-4c56748a74ce/BVUH8QwboT.json" */ /* moving lines across screen animation */
-                    /* src = "https://lottie.host/9c112a39-9c14-4664-9be3-e32ad29619fd/phhXPdnfFD.json" */ /* fish jumping out of pond */
-                    src = "https://lottie.host/efa8049a-7ad6-4c84-bf8d-db300b9fad8f/WWzkk3aIUq.json"
-                    style={{ height: '400px', width: '100%'}}
-                    className="z-0 object-cover"
-                    />
-                </div>
-            )}
+                    autoplay
+                    style={{ height: '400px', width: '100%' }}
+                    className='z-0 object-cover'
+                />
+            </div>
             <div className='z-10 relative text-center pt-14'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">About Me</h3>
                 <div className='flex'>
