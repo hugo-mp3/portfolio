@@ -12,21 +12,19 @@ import {
 export default function Projects(){
     return(
         <>
-            <div className='text-center relative pt-10 z-10'>
+            <div className='w-full text-center pt-10 z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Projects</h3>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardDescription>Card Description</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Card Content</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p>Card Footer</p>
-                    </CardFooter>
-                </Card>
-
+                <div className='flex items-center justify-center w-full text-center z-10'>
+                    <Card className='flex w-3/4 m-10'>
+                        <CardHeader>
+                            <CardTitle>Card Title</CardTitle>
+                            <CardDescription>Card Description</CardDescription>
+                        </CardHeader>
+                        <CardContent className='p-6 content-center'>
+                            <p>Card Content</p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </>
     )
