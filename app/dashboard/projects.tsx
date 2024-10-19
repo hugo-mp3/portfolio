@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+import {Separator} from "@/components/ui/separator"
   
 
 export default function Projects(){
@@ -17,8 +18,8 @@ export default function Projects(){
                 <div className='flex items-center justify-center w-full text-center z-10'>
                     <Card className='flex w-3/4 m-10'>
                         <CardHeader>
-                            <CardTitle>Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
+                            <CardTitle>Manipulate AI</CardTitle>
+                            <CardDescription>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
                         </CardHeader>
                         <CardContent className='p-6 content-center'>
                             <p>Card Content</p>
