@@ -19,7 +19,7 @@ export default function AboutMe(){
             <div className='z-10 relative text-center pt-14'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">About Me</h3>
                 <div className='flex'>
-                    <img src='/images/headshot.png'width={200} className='ml-10 -mt-8'/>
+                    <img src='/images/headshot.png'width={200} className='ml-10 -mt-11'/>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 inline m-5 mr-28">
                         Software Engineer and Web Developer with experience as a 
                         <span className="leading-7 [&:not(:first-child)]:mt-6 inline text-accent-hover"> Research Intern </span>
