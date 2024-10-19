@@ -58,6 +58,9 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		dropShadow: {
+			'xs': '0 5px 5px rgba(54, 203, 176, 1)',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
