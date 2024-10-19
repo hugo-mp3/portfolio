@@ -7,7 +7,7 @@ export default function AboutMe(){
     return(
         <>
             {/* New DotLottie animation implementation */}
-            <div className='flex -left-44 w-screen absolute -mt-16'>
+            <div className='flex -left-44 w-screen absolute -mt-16 overflow-hidden'>
                 <DotLottieReact
                     src="https://lottie.host/871841d3-07bf-40cf-90bc-929e1d3f901d/BWxKrwmaJU.lottie"
                     loop

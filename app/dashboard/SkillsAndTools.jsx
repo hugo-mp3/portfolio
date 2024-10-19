@@ -19,7 +19,7 @@ export default function SkillsAndTools(){
         <>
             <div className='text-center relative pt-20 z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
-                <div className='grid grid-cols-4 justify-items-center gap-x-2 gap-y-8 mb-10 mt-10 mr-32'>
+                <div className='grid grid-cols-4 justify-items-center gap-x-1 gap-y-1 mb-10 mt-10 mr-32'>
                     <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500 hover:scale-150'/>
                     <FaCss3Alt className='h-[2.6rem] w-[2.6rem] text-cyan-500 hover:scale-150'/>
                     <FaReact className='h-[2.6rem] w-[2.6rem] text-cyan-400 hover:scale-150'/>

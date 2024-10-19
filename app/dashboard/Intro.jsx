@@ -4,7 +4,7 @@ import {Button} from "@/components/ui/button.tsx"
 import {ReaderIcon} from "@radix-ui/react-icons"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-  
+
 
 export default function Intro(){
     return(
