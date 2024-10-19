@@ -17,7 +17,10 @@ export default function Projects(){
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Projects</h3>
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 justify-between border-accent-border hover:drop-shadow-xs hover:scale-105'>
-                        <CardHeader className='flex justify-center text-center'>
+                        <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
+                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600}/></a>
+                        </CardContent>
+                        <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
                             <CardTitle>Manipulate AI</CardTitle>
                             <CardDescription className='text-primary'>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
                             <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-sm text-muted-foreground">
@@ -40,9 +43,6 @@ export default function Projects(){
                                 <div>AWS</div>
                             </div>
                         </CardHeader>
-                        <CardContent className='flex pb-6 pl-6 pr-6 content-center justify-center'>
-                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600}/></a>
-                        </CardContent>
                     </Card>
                 </div>
             </div>
