@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import {Button} from "@/components/ui/button.tsx"
+import {Button} from "@/components/ui/button"
 import {ReaderIcon} from "@radix-ui/react-icons"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
