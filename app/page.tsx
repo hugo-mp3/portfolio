@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
-import Waves1Down from "@/assets/Waves1Down.jsx"
-import Intro from "@/app/dashboard/intro.jsx"
-import AboutMe from "@/app/dashboard/aboutme.jsx"
-import SkillsAndTools from "@/app/dashboard/skillsandtools.jsx"
-import Projects from "@/app/dashboard/projects.jsx"
+import Waves1Down from "@/assets/Waves1Down"
+import Intro from "@/app/dashboard/intro"
+import AboutMe from "@/app/dashboard/aboutme"
+import SkillsAndTools from "@/app/dashboard/skillsandtools"
+import Projects from "@/app/dashboard/projects"
 export default function Home() {
   return (
     <>
