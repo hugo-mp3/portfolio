@@ -7,12 +7,12 @@ export default function AboutMe(){
     return(
         <>
             {/* New DotLottie animation implementation */}
-            <div className='flex -left-44 w-screen absolute -mt-16 overflow-hidden'>
+            <div className='flex -left-44 w-1/2 absolute -mt-16 overflow-hidden'>
                 <DotLottieReact
                     src="https://lottie.host/871841d3-07bf-40cf-90bc-929e1d3f901d/BWxKrwmaJU.lottie"
                     loop
                     autoplay
-                    style={{ height: '400px', width: '100%' }}
+                    /* style={{ height: '400px', width: '100%' }} */
                     className='z-0 object-cover border-b-2 border-accent'
                 />
             </div>
