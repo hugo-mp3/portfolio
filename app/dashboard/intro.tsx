@@ -20,7 +20,7 @@ export default function Intro(){
                 </div>
                 {/* New DotLottie animation implementation */}
                 <DotLottieReact
-                    src="https://lottie.host/faa9004e-c6ab-4d25-9cda-65f392df45ea/hW09IBOedm.lottie"
+                    src="https://lottie.host/3bc940a1-acb5-4560-8cd5-c6ed3809eaa3/T8tlf8WyPI.json"
                     loop
                     autoplay
                     style={{ height: '300px', width: '300px' }}
