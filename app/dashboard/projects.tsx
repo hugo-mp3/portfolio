@@ -14,9 +14,9 @@ export default function Projects(){
             <div className='w-full text-center z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Projects</h3>
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
-                    <Card className='w-1/2 m-10 justify-between border-accent-border hover:drop-shadow-xs hover:scale-105'>
+                    <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:scale-105'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
-                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600}/></a>
+                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/></a>
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
                             <CardTitle>Manipulate AI</CardTitle>
