@@ -23,23 +23,15 @@ export default function Projects(){
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
                             <CardTitle>Manipulate AI</CardTitle>
                             <CardDescription className='text-primary'>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
-                            <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-sm text-muted-foreground">
+                            <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
                                 <div>Next.js</div>
-                                <Separator orientation="vertical" />
                                 <div>React.js</div>
-                                <Separator orientation="vertical" />
                                 <div>Shadcn</div>
-                                <Separator orientation="vertical" />
                                 <div>Vercel</div>
-                                <Separator orientation="vertical" />
                                 <div>TailwindCSS</div>
-                                <Separator orientation="vertical" />
                                 <div>FastAPI</div>
-                                <Separator orientation="vertical" />
                                 <div>MongoDB</div>
-                                <Separator orientation="vertical" />
                                 <div>OpenAI</div>
-                                <Separator orientation="vertical" />
                                 <div>AWS</div>
                             </div>
                         </CardHeader>
