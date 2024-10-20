@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import {
     Card,
@@ -6,7 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-  
+import ReactPlayer from 'react-player'
 
 export default function Projects(){
     return(
@@ -40,7 +41,7 @@ export default function Projects(){
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 mt-0 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:scale-105'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
-                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/></a>
+                            <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2'/>
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
                             <CardTitle>HugoBot</CardTitle>
