@@ -13,7 +13,7 @@ import {Separator} from "@/components/ui/separator"
 export default function Projects(){
     return(
         <>
-            <div className='w-full text-center pt-10 z-10'>
+            <div className='w-full text-center z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Projects</h3>
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 justify-between border-accent-border hover:drop-shadow-xs hover:scale-105'>
