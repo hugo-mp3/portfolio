@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import {
     Card,
     CardContent,
@@ -10,6 +10,12 @@ import {
 import ReactPlayer from 'react-player'
 
 export default function Projects(){
+    const [isClient,setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    });
+
     return(
         <>
             <div className='w-full text-center z-10'>
@@ -41,7 +47,7 @@ export default function Projects(){
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 mt-0 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:scale-105'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
-                            <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2'/>
+                            {isClient && <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2'/>}
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
                             <CardTitle>HugoBot</CardTitle>
