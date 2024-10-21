@@ -59,7 +59,7 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		dropShadow: {
-			'xs': '0 5px 5px rgba(202, 163, 218, 1)',
+			'xs': '0 10px 10px rgba(202, 163, 218, 1)',
 		}
   	}
   },
