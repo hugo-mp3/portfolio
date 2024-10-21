@@ -7,9 +7,9 @@ export default function AboutMe(){
     return(
         <>
             {/* New DotLottie animation implementation */}
-            <div className='flex -left-44 w-1/2 absolute -mt-16 overflow-hidden'>
+            <div className='flex -left-44 w-1/2 absolute h-2/5 -mt-28 overflow-hidden'>
                 <DotLottieReact
-                    src="https://lottie.host/386d7058-24b8-49d5-a47b-9b8b2cd6ba38/0qyE0pA6Fg.lottie"
+                    src="https://lottie.host/860fd3ec-ccc3-474c-87c6-927abb6aed3c/UVOirpsQt8.lottie"
                     loop
                     autoplay
                     /* style={{ height: '400px', width: '100%' }} */
