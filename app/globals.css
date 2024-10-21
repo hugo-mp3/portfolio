@@ -28,7 +28,7 @@ body {
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
-    --accent-hover: 176 84% 36%;
+    --accent-hover: 284, 26%, 60%;
     --accent-border: 170 72% 40%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -57,7 +57,7 @@ body {
     --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-    --accent-hover: 171 87% 78%;
+    --accent-hover: 283, 43%, 75%;
     --accent-border: 165 75% 80%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
