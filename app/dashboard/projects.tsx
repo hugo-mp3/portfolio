@@ -8,6 +8,7 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 import ReactPlayer from 'react-player'
+import { WiDirectionUpRight } from "react-icons/wi";
 
 export default function Projects(){
     const [isClient,setIsClient] = useState(false);
@@ -24,10 +25,10 @@ export default function Projects(){
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
-                            <a href="https://www.manipulate.app/"><img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/></a>
+                            <img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/>
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
-                            <CardTitle>Manipulate AI</CardTitle>
+                            <CardTitle className='flex justify-center text-center'><a href="https://www.manipulate.app/" className='flex ml-[1.6rem]'>Manipulate AI<WiDirectionUpRight className='h-[1.6rem] w-[1.6rem] -mt-1'/></a></CardTitle>
                             <CardDescription className='text-primary'>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
                             <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
                                 <div>Next.js</div>
@@ -50,7 +51,7 @@ export default function Projects(){
                             {isClient && <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2' />}
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
-                            <CardTitle>HugoBot</CardTitle>
+                            <CardTitle className='flex justify-center text-center'><a href="https://github.com/hugo-mp3/HugoBot-frontend" className='flex ml-[1.6rem]'>HugoBot<WiDirectionUpRight className='h-[1.6rem] w-[1.6rem] -mt-1'/></a></CardTitle>
                             <CardDescription className='text-primary'>An interactive 3D virtual companion app</CardDescription>
                             <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
                                 <div>React.js</div>
