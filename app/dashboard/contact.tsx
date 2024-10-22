@@ -63,17 +63,17 @@ export default function Contact(){
                         <CardHeader>
                             <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">Email Me</CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-4">
+                        <CardContent className="space-y-4 text-left">
                             <div className="space-y-2">
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="email" className='ml-1'>Email</Label>
                                 <Input id="email" placeholder="example@gmail.com" type="email" value={formData.email} onChange={handleChange} required />
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name" className='ml-1'>Name</Label>
                                 <Input id="name" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="message">Message</Label>
+                                <Label htmlFor="message" className='ml-1'>Message</Label>
                                 <Textarea id="message" placeholder="Hey there!" className="min-h-[100px]" value={formData.message} onChange={handleChange} required />
                             </div>
                         </CardContent>
