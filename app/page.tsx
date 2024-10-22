@@ -14,8 +14,10 @@ export default function Home() {
       <Waves1Down />
       <AboutMe />
       <SkillsAndTools />
-      <Projects />
-      <Contact />
+      <div className='bg-backgroundsvg' style={{ backgroundPosition: 'center 20px' }}>
+        <Projects />
+        <Contact />
+      </div>
     </>
   );
 }
