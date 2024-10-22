@@ -30,7 +30,7 @@ export default function Contact(){
                             </div>
                         </CardContent>
                         <CardFooter className="flex justify-center">
-                            <Button type="submit" className="w-full">Submit</Button>
+                            <Button type="submit" className="w-3/4">Submit</Button>
                         </CardFooter>
                     </Card>
                 </div>
