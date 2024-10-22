@@ -10,8 +10,8 @@ export default function Contact(){
         <>
             <div className='w-full text-center z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Contact</h3>
-                <div className='w-full max-w-md mx-auto'>
-                    <Card className="w-full">
+                <div className='w-full max-w-lg mx-auto m-10'>
+                    <Card className="w-full border-accent-border border-2 ">
                         <CardHeader>
                             <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">Email Me</CardTitle>
                         </CardHeader>
