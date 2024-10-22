@@ -17,7 +17,7 @@ export default function SkillsAndTools(){
 
     return(
         <>
-            <div className='text-center relative pt-20 z-10'>
+            <div className='text-center relative pt-10 z-10'>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
                 <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10 ml-56 mr-56'>
                     <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500 hover:scale-125'/>
