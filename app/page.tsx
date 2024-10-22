@@ -17,6 +17,7 @@ export default function Home() {
       <div className='bg-backgroundsvg' style={{ backgroundPosition: 'center 20px' }}>
         <Projects />
         <Contact />
+        <div className='h-5'></div>
       </div>
     </>
   );
