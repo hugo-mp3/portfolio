@@ -5,7 +5,7 @@ export default function AboutMe(){
     return(
         <>
             
-            <div className='z-10 relative text-center pt-14'>
+            <div className='z-10 relative text-center pt-14 '>
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">About Me</h3>
                 <div className='flex justify-center items-center'>
                     <img src='/images/newheadshot.png' className='inline ml-3 w-1/6 h-1/6'/>
