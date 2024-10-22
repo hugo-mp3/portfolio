@@ -5,16 +5,19 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { useToast } from "@/hooks/use-toast"
 import emailjs from 'emailjs-com'
 
 export default function Contact(){
+    const { toast } = useToast()
+
     const [formData, setFormData] = useState({
         email: '',
         name: '',
         message: ''
     });
     
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState('null');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -38,11 +41,20 @@ export default function Contact(){
         )
         .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
-            setStatus('Email sent successfully!');
+            toast({
+                title: "Message Successfully Sent",
+                description: "Thank you for reaching out! I'll get back to you shortly."
+            })
+            setStatus('success');
             setFormData({ email: '', name: '', message: '' }); // Clear form
         }, (error) => {
             console.error('FAILED...', error);
-            setStatus('Failed to send email.');
+            toast({
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "There was a problem with your request."
+              })
+            setStatus('failure');
         });
     };
     return(
@@ -73,7 +85,6 @@ export default function Contact(){
                             <Button type="submit" className="w-3/4">Submit</Button>
                         </CardFooter>
                         </form>
-                        {status && <p>{status}</p>}
                     </Card>
                 </div>
             </div>
