@@ -16,8 +16,6 @@ export default function Contact(){
         name: '',
         message: ''
     });
-    
-    const [status, setStatus] = useState('null');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -45,7 +43,6 @@ export default function Contact(){
                 title: "Message Successfully Sent",
                 description: "Thank you for reaching out! I'll get back to you shortly."
             })
-            setStatus('success');
             setFormData({ email: '', name: '', message: '' }); // Clear form
         }, (error) => {
             console.error('FAILED...', error);
@@ -54,7 +51,6 @@ export default function Contact(){
                 title: "Uh oh! Something went wrong.",
                 description: "There was a problem with your request."
               })
-            setStatus('failure');
         });
     };
     return(
@@ -82,7 +78,7 @@ export default function Contact(){
                             </div>
                         </CardContent>
                         <CardFooter className="flex justify-center">
-                            <Button type="submit" className="w-3/4">Submit</Button>
+                            <Button type="submit" className="w-3/4 hover:bg-accent-border">Submit</Button>
                         </CardFooter>
                         </form>
                     </Card>
