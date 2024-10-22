@@ -60,6 +60,9 @@ const config: Config = {
   		},
 		dropShadow: {
 			'xs': '0 10px 10px rgba(202, 163, 218, 1)',
+		},
+		backgroundImage: {
+			'backgroundsvg': "url('/images/background.svg')",
 		}
   	}
   },
