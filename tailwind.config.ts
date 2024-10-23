@@ -63,6 +63,7 @@ const config: Config = {
 		},
 		backgroundImage: {
 			'backgroundsvg': "url('/images/background.svg')",
+			'abovebackgroundsvg': "url('/images/abovebackground.svg')"
 		}
   	}
   },
