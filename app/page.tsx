@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <Intro />
       <Waves1Down />
-      <div className='bg-abovebackgroundsvg bg-contain'>
+      <div className='bg-abovebackgroundsvg lg:bg-contain sm:bg-cover'>
         <AboutMe />
       </div>
       <SkillsAndTools />
