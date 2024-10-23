@@ -9,6 +9,7 @@ import {
   } from "@/components/ui/card"
 import ReactPlayer from 'react-player'
 import { WiDirectionUpRight } from "react-icons/wi";
+import {Button} from "@/components/ui/button"
 
 export default function Projects(){
     const [isClient,setIsClient] = useState(false);
@@ -28,7 +29,7 @@ export default function Projects(){
                             <img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/>
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
-                            <CardTitle className='flex justify-center text-center'><a href="https://www.manipulate.app/" className='flex ml-[1.6rem]'>Manipulate AI<WiDirectionUpRight className='h-[1.6rem] w-[1.6rem] -mt-1'/></a></CardTitle>
+                            <CardTitle className='flex justify-center text-center'><a href="https://www.manipulate.app/" className='flex ml-24'>Manipulate AI<Button className='ml-4 -mt-2 w-20 h-7'><WiDirectionUpRight className='h-[2.6rem] w-[2.6rem]'/>Launch</Button></a></CardTitle>
                             <CardDescription className='text-primary'>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
                             <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
                                 <div>Next.js</div>
