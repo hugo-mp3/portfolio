@@ -56,7 +56,7 @@ export default function Contact(){
     return(
         <>
             <div className='w-full text-center z-10'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Contact</h3>
+                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border bg-background">Contact</h3>
                 <div className='w-full max-w-lg mx-auto m-10'>
                     <Card className="w-full border-accent-border border-2 ">
                         <form onSubmit={handleSubmit}>
