@@ -12,7 +12,9 @@ export default function Home() {
       <Navbar />
       <Intro />
       <Waves1Down />
-      <AboutMe />
+      <div className='bg-abovebackgroundsvg bg-contain'>
+        <AboutMe />
+      </div>
       <SkillsAndTools />
       <div className='bg-backgroundsvg' style={{ backgroundPosition: 'center 20px' }}>
         <Projects />
