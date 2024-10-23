@@ -20,7 +20,7 @@ export default function Projects(){
     return(
         <>
             <div className='w-full text-center z-10'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Projects</h3>
+                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border">Projects</h3>
                 {/* manipulate ai card */}
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
                     <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:-translate-y-4 transition-translate duration-300 ease-in-out'>
