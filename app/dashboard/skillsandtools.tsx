@@ -26,7 +26,7 @@ export default function SkillsAndTools(){
                 <div className='sm:ml-14 sm:mr-14 md:ml-28 md:mr-28 md-1:ml-40 md-1:mr-40 lg:ml-56 lg:mr-56'>
                     <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10'>
                         <TooltipProvider>
-                            <Tooltip>
+                            <Tooltip delayDuration={30}>
                                 <TooltipTrigger asChild>
                                     <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500 hover:scale-125'/>
                                 </TooltipTrigger>
