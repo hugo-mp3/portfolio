@@ -16,6 +16,11 @@ const config: Config = {
 		'2xl': '1536px',
 	},
   	extend: {
+		screens: {
+			'base': '370px',
+			'base-1': '540px',
+			'md-1': '855px',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
