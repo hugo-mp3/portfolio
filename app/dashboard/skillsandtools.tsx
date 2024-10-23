@@ -17,9 +17,10 @@ export default function SkillsAndTools(){
 
     return(
         <>
-            <div className='text-center relative pt-10 z-10'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
-                <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10 ml-56 mr-56'>
+            <div className='text-center relative z-10 '>
+                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-t-2 border-b-2 border-accent-border">Skills</h3>
+                <div className=''>
+                    <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10 ml-56 mr-56 '>
                     <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500 hover:scale-125'/>
                     <FaCss3Alt className='h-[2.6rem] w-[2.6rem] text-cyan-500 hover:scale-125'/>
                     <FaReact className='h-[2.6rem] w-[2.6rem] text-cyan-400 hover:scale-125'/>
@@ -44,7 +45,9 @@ export default function SkillsAndTools(){
                     <BiLogoPostgresql className='h-[2.6rem] w-[2.6rem] text-cyan-800 hover:scale-125' />
                     <DiMongodb className='h-[2.6rem] w-[2.6rem] text-green-500 hover:scale-125' />
                     <GrDocker className='h-[2.6rem] w-[2.6rem] text-cyan-400 hover:scale-125' />
+                    </div>
                 </div>
+                
             </div>
         </>
     )
