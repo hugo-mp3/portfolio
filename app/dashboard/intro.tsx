@@ -9,7 +9,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 export default function Intro(){
     return(
         <>
-            <div className="flex items-center justify-start space-x-10">
+            <div className="flex items-center justify-start space-x-10 pt-12">
                 <div className='ml-10 pb-10'>
                     <p className="leading-7 [&:not(:first-child)]:mt-6 text-muted-foreground">Howdy! I am </p>
                     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">Hugo Manrique-Pinell</h1>
