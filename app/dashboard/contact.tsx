@@ -1,16 +1,28 @@
-"use client"
-import React, { useState } from 'react'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
-import emailjs from 'emailjs-com'
+"use client";
+import React, { useState, useEffect } from 'react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
-export default function Contact(){
-    const { toast } = useToast()
+declare global {
+    interface Window {
+        grecaptcha: {
+            execute: (sitekey: string, options?: { action: string }) => Promise<string>;
+        };
+    }
+}
 
+const emailjsServiceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID || '';
+const emailjsTemplateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID || '';
+const emailjsPublicKey = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY || '';
+const captchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
+export default function Contact() {
+    const { toast } = useToast();
     const [formData, setFormData] = useState({
         email: '',
         name: '',
@@ -27,39 +39,63 @@ export default function Contact(){
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        emailjs.send(
-            'service_202o2em',     // Replace with your EmailJS service ID
-            'template_cup0sts',    // Replace with your EmailJS template ID
-            {
-                from_name: formData.name,   // Maps to {{from_name}} in your template
-                message: formData.message,  // Maps to {{message}} in your template
-                reply_to: formData.email    // Maps to {{reply_to}} in your template
-            },
-            'DaQlAHUlZp4e8T5al'         // Replace with your EmailJS public key (from account settings)
-        )
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            toast({
-                title: "Message Successfully Sent",
-                description: "Thank you for reaching out! I'll get back to you shortly."
-            })
-            setFormData({ email: '', name: '', message: '' }); // Clear form
-        }, (error) => {
-            console.error('FAILED...', error);
-            toast({
-                variant: "destructive",
-                title: "Uh oh! Something went wrong.",
-                description: "There was a problem with your request."
-              })
-        });
+        if (typeof window !== 'undefined' && window.grecaptcha) {
+            window.grecaptcha.execute(captchaKey, { action: 'submit' }).then((token) => {
+                emailjs.send(
+                    emailjsServiceID,     // Replace with your EmailJS service ID
+                    emailjsTemplateID,    // Replace with your EmailJS template ID
+                    {
+                        from_name: formData.name,   // Maps to {{from_name}} in your template
+                        message: formData.message,  // Maps to {{message}} in your template
+                        reply_to: formData.email,   // Maps to {{reply_to}} in your template
+                        'g-recaptcha-response': token // Add the token to your payload
+                    },
+                    emailjsPublicKey         // Replace with your EmailJS public key (from account settings)
+                )
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    toast({
+                        title: "Message Successfully Sent",
+                        description: "Thank you for reaching out! I'll get back to you shortly."
+                    });
+                    setFormData({ email: '', name: '', message: '' }); // Clear form
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    toast({
+                        variant: "destructive",
+                        title: "Uh oh! Something went wrong.",
+                        description: "There was a problem with your request."
+                    });
+                });
+            });
+        }
     };
-    return(
-        <>
-            <div className='w-full text-center z-10'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border bg-background">Contact</h3>
-                <div className='w-full max-w-lg mx-auto m-10'>
-                    <Card className="w-full border-accent-border border-2 ">
-                        <form onSubmit={handleSubmit}>
+
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = `https://www.google.com/recaptcha/api.js?render=${captchaKey}`; // Replace with your site key
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+    
+        script.onload = () => {
+            if (typeof window.grecaptcha === "undefined") {
+                console.error("grecaptcha is not defined");
+            }
+        };
+    
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+    
+
+    return (
+        <div className='w-full text-center z-10'>
+            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border bg-background">Contact</h3>
+            <div className='w-full max-w-lg mx-auto m-10'>
+                <Card className="w-full border-accent-border border-2">
+                    <form onSubmit={handleSubmit}>
                         <CardHeader>
                             <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">Email Me</CardTitle>
                         </CardHeader>
@@ -80,10 +116,9 @@ export default function Contact(){
                         <CardFooter className="flex justify-center">
                             <Button type="submit" className="w-3/4 hover:bg-accent-border">Submit</Button>
                         </CardFooter>
-                        </form>
-                    </Card>
-                </div>
+                    </form>
+                </Card>
             </div>
-        </>
-    )
+        </div>
+    );
 }
