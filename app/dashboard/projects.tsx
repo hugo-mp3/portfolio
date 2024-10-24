@@ -9,7 +9,8 @@ import {
   } from "@/components/ui/card"
 import ReactPlayer from 'react-player'
 import { WiDirectionUpRight } from "react-icons/wi";
-import {Button} from "@/components/ui/button"
+import { IoGlobeOutline } from "react-icons/io5";
+import { VscGithub } from "react-icons/vsc";
 
 export default function Projects(){
     const [isClient,setIsClient] = useState(false);
@@ -24,12 +25,12 @@ export default function Projects(){
                 <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border">Projects</h3>
                 {/* manipulate ai card */}
                 <div className='flex items-center content-center justify-center w-full text-center z-10'>
-                    <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:-translate-y-4 transition-translate duration-300 ease-in-out'>
+                    <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:-translate-y-4 transition-translate duration-300 ease-in-out will-change-transform'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
                             <img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/>
                         </CardContent>
                         <CardHeader className='flex pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
-                            <CardTitle className='flex justify-center text-center text-2xl text-accent-hover'><a href="https://www.manipulate.app/" className='flex ml-24'>Manipulate AI<Button className='ml-4 -mt-2 w-20 h-7'><WiDirectionUpRight className='h-[2.6rem] w-[2.6rem]'/>Launch</Button></a></CardTitle>
+                            <CardTitle className='flex justify-center text-center text-2xl text-accent-hover underline'><a href="https://www.manipulate.app/" className='flex  ml-[2.2rem]'>Manipulate AI<IoGlobeOutline className='h-[1.8rem] w-[1.8rem] ml-[0.4rem]'/></a></CardTitle>
                             <CardDescription className='text-primary'>A platform and SaaS solution that provides users with a personalized AI mentor for guidance and manipulation.</CardDescription>
                             <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
                                 <div>Next.js</div>
@@ -52,7 +53,7 @@ export default function Projects(){
                             {isClient && <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2' />}
                         </CardContent>
                         <CardHeader className='flex flex-col items-center pr-6 pl-6 pb-6 pt-0 justify-center text-center'>
-                            <CardTitle className='flex justify-center text-center -mb-1 text-2xl text-accent-hover underline'><a href="https://github.com/hugo-mp3/HugoBot-frontend" className='flex ml-[2.2rem]'>HugoBot<WiDirectionUpRight className='h-[2.2rem] w-[2.2rem] '/></a></CardTitle>
+                            <CardTitle className='flex justify-center text-center -mb-1 text-2xl text-accent-hover underline'><a href="https://github.com/hugo-mp3/HugoBot-frontend" className='flex ml-[2.2rem]'>HugoBot<VscGithub className='h-[1.8rem] w-[1.8rem] ml-[0.4rem]'/></a></CardTitle>
                             <div className="flex flex-col justify-center items-center h-full">
                                 <CardDescription className='text-primary mb-1'>An interactive 3D virtual companion app</CardDescription>
                                 <div className="flex flex-wrap h-5 items-center justify-center space-x-4 text-xs text-accent-border">
