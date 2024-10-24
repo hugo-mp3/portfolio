@@ -10,15 +10,23 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Intro />
+      <section id='home'>
+        <Intro />
+      </section>      
       <Waves1Down />
-      <div className='bg-abovebackgroundsvg lg:bg-contain sm:bg-cover'>
-        <AboutMe />
-      </div>
+      <section id='about'>
+        <div className='bg-abovebackgroundsvg lg:bg-contain sm:bg-cover'>
+          <AboutMe />
+        </div>
+      </section>
       <SkillsAndTools />
       <div className='bg-backgroundsvg' style={{ backgroundPosition: 'center 20px' }}>
-        <Projects />
-        <Contact />
+        <section id='projects'>
+          <Projects />
+        </section>
+        <section id='contact'>
+          <Contact />
+        </section>
         <div className='h-5'></div>
       </div>
     </>
