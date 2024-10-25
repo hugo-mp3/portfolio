@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Waves1Down() {
   return (
-    <div className='z-10 relative'>
+    <div className='w-screen z-10 relative'>
       <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
