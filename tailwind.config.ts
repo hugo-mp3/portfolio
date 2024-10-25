@@ -16,8 +16,11 @@ const config: Config = {
 		'2xl': '1536px',
 	},
   	extend: {
+		fontSize: {
+			xxs: '0.7rem'
+		},
 		screens: {
-			'base': '370px',
+			'base': '360px',
 			'base-1': '540px',
 			'md-1': '855px',
 		},
