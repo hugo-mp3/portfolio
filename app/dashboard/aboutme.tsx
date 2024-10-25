@@ -19,44 +19,86 @@ const paragraphVariants = {
 
 export default function AboutMe() {
     return (
-        <div className='z-10 relative text-center pt-12 sm:text-lg lg:text-xl base:hidden md-1:block'>
-            <motion.h3
-                className="scroll-m-20 text-2xl font-semibold tracking-tight bg-background"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.2 }}
-                transition={{ duration: 0.5 }}
-                variants={headerVariants}
-            >
-                About Me
-            </motion.h3>
-            <div className='flex justify-center items-center'>
-                <motion.img
-                    src='/images/newheadshot.png'
-                    className='inline ml-3 w-1/6 h-1/6'
+        <>
+            <div className='w-screen z-10 relative text-center pt-12 sm:text-lg lg:text-xl base:hidden md-1:block'>
+                <motion.h3
+                    className="scroll-m-20 text-2xl font-semibold tracking-tight bg-background"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ amount: 0.2 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    variants={imageVariants}
-                />
-                <motion.p
-                    className="leading-7 [&:not(:first-child)]:mt-6 inline m-5 mr-28"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ amount: 0.2 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    variants={paragraphVariants}
+                    transition={{ duration: 0.5 }}
+                    variants={headerVariants}
                 >
-                    Software Engineer and Web Developer with experience at 
-                    <a href="https://www.medstarhealth.org/innovation-and-research/medstar-health-research-institute">
-                        <span className="leading-7 [&:not(:first-child)]:mt-6 inline text-accent-hover font-bold"> Medstar Health Research Institute</span>
-                    </a>. 
-                    I have a strong focus on continuous learning and hands-on project development. Currently pursuing academic excellence while 
-                    actively building a solid foundation in software engineering principles. Eager to contribute to innovative teams, solve 
-                    complex problems, and grow into a role where I can make a meaningful impact on product development and people.
-                </motion.p>
+                    About Me
+                </motion.h3>
+                <div className='flex justify-center items-center'>
+                    <motion.img
+                        src='/images/newheadshot.png'
+                        className='inline ml-3 w-1/6 h-1/6'
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        variants={imageVariants}
+                    />
+                    <motion.p
+                        className="leading-7 [&:not(:first-child)]:mt-6 inline m-5 mr-28"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        variants={paragraphVariants}
+                    >
+                        Software Engineer and Web Developer with experience at 
+                        <a href="https://www.medstarhealth.org/innovation-and-research/medstar-health-research-institute">
+                            <span className="leading-7 [&:not(:first-child)]:mt-6 inline text-accent-hover font-bold"> Medstar Health Research Institute</span>
+                        </a>. 
+                        I have a strong focus on continuous learning and hands-on project development. Currently pursuing academic excellence while 
+                        actively building a solid foundation in software engineering principles. Eager to contribute to innovative teams, solve 
+                        complex problems, and grow into a role where I can make a meaningful impact on product development and people.
+                    </motion.p>
+                </div>
             </div>
-        </div>
+            {/* img above description for vw under certain width */}
+            <div className='w-screen z-10 relative text-center pt-12 base:text-sm sm:text-lg base:block md-1:hidden'>
+                <motion.h3
+                    className="scroll-m-20 text-2xl font-semibold tracking-tight bg-background"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5 }}
+                    variants={headerVariants}
+                >
+                    About Me
+                </motion.h3>
+                <div className='flex flex-col justify-center items-center'>
+                    <motion.img
+                        src='/images/newheadshot.png'
+                        className='inline w-3/12 h-3/12 mt-2'
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        variants={imageVariants}
+                    />
+                    <motion.p
+                        className="leading-7 [&:not(:first-child)]:mt-4 inline m-14 mb-6"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        variants={paragraphVariants}
+                    >
+                        Software Engineer and Web Developer with experience at 
+                        <a href="https://www.medstarhealth.org/innovation-and-research/medstar-health-research-institute">
+                            <span className="leading-7 [&:not(:first-child)]:mt-6 inline text-accent-hover font-bold"> Medstar Health Research Institute</span>
+                        </a>. 
+                        I have a strong focus on continuous learning and hands-on project development. Currently pursuing academic excellence while 
+                        actively building a solid foundation in software engineering principles. Eager to contribute to innovative teams, solve 
+                        complex problems, and grow into a role where I can make a meaningful impact on product development and people.
+                    </motion.p>
+                </div>
+            </div>
+        </>
     );
 }
