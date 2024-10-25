@@ -15,7 +15,7 @@ export default function Home() {
       </section>      
       <Waves1Down />
       <section id='about'>
-        <div className='bg-abovebackgroundsvg base:bg-cover lg:bg-contain sm:bg-cover'>
+        <div className='bg-abovebackgroundsvg base:bg-cover lg:bg-cover sm:bg-cover'>
           <AboutMe />
         </div>
       </section>
