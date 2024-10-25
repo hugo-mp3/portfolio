@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { FaHtml5, FaCss3Alt, FaReact, FaPython, FaJava, FaNode, FaWindows, FaLinux } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
@@ -12,7 +13,12 @@ import {Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,} from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
 
+const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 }
+};
 
 
 
@@ -22,8 +28,24 @@ export default function SkillsAndTools(){
     return(
         <>
             <div className='text-center relative'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-t-2 border-b-2 border-accent-border">Skills</h3>
-                <div className='sm:ml-14 sm:mr-14 md:ml-28 md:mr-28 md-1:ml-40 md-1:mr-40 lg:ml-56 lg:mr-56'>
+                <motion.h3
+                    className='scroll-m-20 text-2xl font-semibold tracking-tight border-t-2 border-b-2 border-accent-border'
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport = {{ amount: 0.2 }}
+                    transition= {{ duration: 0.3 }}
+                    variants={itemVariants}
+                >
+                    Skills
+                </motion.h3>
+                <motion.div
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3}}
+                    variants={itemVariants}
+                    className='sm:ml-14 sm:mr-14 md:ml-28 md:mr-28 md-1:ml-40 md-1:mr-40 lg:ml-56 lg:mr-56'
+                >
                     <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10'>
                         {/* html5 icon/tooltip */}
                         <TooltipProvider>
@@ -290,8 +312,7 @@ export default function SkillsAndTools(){
                             </Tooltip>
                         </TooltipProvider>
                     </div>
-                </div>
-                
+                </motion.div>                
             </div>
         </>
     )
