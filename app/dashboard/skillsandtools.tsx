@@ -44,9 +44,9 @@ export default function SkillsAndTools(){
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.5, delay: 0.3}}
                     variants={itemVariants}
-                    className='sm:ml-14 sm:mr-14 md:ml-28 md:mr-28 md-1:ml-40 md-1:mr-40 lg:ml-56 lg:mr-56'
+                    className='base:ml-8 base:mr-8 sm:ml-14 sm:mr-14 md:ml-28 md:mr-28 md-1:ml-40 md-1:mr-40 lg:ml-56 lg:mr-56'
                 >
-                    <div className='grid grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10'>
+                    <div className='grid base:grid-cols-4 base-1:grid-cols-6 sm:grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10'>
                         {/* html5 icon/tooltip */}
                         <TooltipProvider>
                             <Tooltip delayDuration={30}>
