@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
+import { motion } from "framer-motion";
+
 
 declare global {
     interface Window {
@@ -15,6 +17,11 @@ declare global {
         };
     }
 }
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+};
 
 const emailjsServiceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID || '';
 const emailjsTemplateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID || '';
@@ -92,8 +99,24 @@ export default function Contact() {
 
     return (
         <div className='w-full text-center z-10'>
-            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border bg-background">Contact</h3>
-            <div className='w-full max-w-lg mx-auto m-10'>
+            <motion.h3
+                className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border bg-background"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.5 }}
+                variants={itemVariants}
+            >
+                Contact
+            </motion.h3>
+            <motion.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.3}}
+                variants={itemVariants}
+                className='w-full max-w-lg mx-auto m-10'
+            >
                 <Card className="w-full border-accent-border border-2">
                     <form onSubmit={handleSubmit}>
                         <CardHeader>
@@ -118,7 +141,7 @@ export default function Contact() {
                         </CardFooter>
                     </form>
                 </Card>
-            </div>
+            </motion.div>
         </div>
     );
 }
