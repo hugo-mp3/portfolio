@@ -11,6 +11,12 @@ import ReactPlayer from 'react-player'
 import { WiDirectionUpRight } from "react-icons/wi";
 import { IoGlobeOutline } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
+import { motion } from "framer-motion"
+
+const itemVariants = {
+    hidden: { opacity:0, x: 50 },
+    visible: { opacity:1, x:0 }
+}
 
 export default function Projects(){
     const [isClient,setIsClient] = useState(false);
@@ -22,9 +28,25 @@ export default function Projects(){
     return(
         <>
             <div className='w-full text-center z-10'>
-                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border">Projects</h3>
+                <motion.h3
+                    className='scroll-m-20 text-2xl font-semibold tracking-tight border-b-2 border-t-2 border-accent-border'
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport = {{ amount: 0.2 }}
+                    transition= {{ duration: 0.3 }}
+                    variants={itemVariants}
+                >
+                    Projects
+                </motion.h3>
                 {/* manipulate ai card */}
-                <div className='flex items-center content-center justify-center w-full text-center z-10'>
+                <motion.div
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3}}
+                    variants={itemVariants}
+                    className='flex items-center content-center justify-center w-full text-center z-10'
+                >
                     <Card className='w-1/2 m-10 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:-translate-y-4 transition-translate duration-300 ease-in-out will-change-transform'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
                             <img src='/images/manipulateai.png'width={600} className='border-accent-border border-2'/>
@@ -45,9 +67,16 @@ export default function Projects(){
                             </div>
                         </CardHeader>
                     </Card>
-                </div>
+                </motion.div>
                 {/* hugobot card */}
-                <div className='flex items-center content-center justify-center w-full text-center z-10'>
+                <motion.div
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.3}}
+                    variants={itemVariants}
+                    className='flex items-center content-center justify-center w-full text-center z-10'
+                >
                     <Card className='w-1/2 m-10 mt-0 justify-between border-accent-border border-2 hover:drop-shadow-xs hover:-translate-y-4 transition-translate duration-300 ease-in-out will-change-transform'>
                         <CardContent className='flex pt-6 pr-6 pl-6 content-center justify-center'>
                             {isClient && <ReactPlayer url='https://youtu.be/6mUZqZc3WWk' width={600} className='border-accent-border border-2' />}
@@ -68,7 +97,7 @@ export default function Projects(){
                             </div>
                         </CardHeader>
                     </Card>
-                </div>
+                </motion.div>
 
             </div>
         </>
