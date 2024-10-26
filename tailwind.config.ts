@@ -21,6 +21,7 @@ const config: Config = {
 		},
 		screens: {
 			'base': '360px',
+			'base-0': '440px',
 			'base-1': '540px',
 			'md-1': '855px',
 		},
