@@ -20,15 +20,16 @@ export default function Home() {
         </div>
       </section>
       <SkillsAndTools />
-      <div className='bg-backgroundsvg' style={{ backgroundPosition: 'center 20px' }}>
+      <div className='bg-backgroundsvg' style={{ backgroundPosition: '-5px 25px' }}>
         <section id='projects'>
           <Projects />
         </section>
         <section id='contact'>
           <Contact />
         </section>
-        <div className='h-5'></div>
+        <div className='h-3'></div>
       </div>
+
     </>
   );
 }
