@@ -78,7 +78,7 @@ export default function Intro() {
                         loop
                         autoplay
                         /* style={{ height: '300px', width: '300px' }} */
-                        className='base:w-52 base:h-52 sm:w-80 sm:h-80'
+                        className='base:w-52 base:h-52 sm:w-80 sm:h-80 2xl:w-96 2xl:h-96'
                     />
                 </motion.div>
             </div>
