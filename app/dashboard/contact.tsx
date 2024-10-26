@@ -96,6 +96,7 @@ export default function Contact() {
         };
     }, []);
     
+    
 
     return (
         <div className='w-full text-center z-10'>
@@ -115,9 +116,9 @@ export default function Contact() {
                 viewport={{ amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.3}}
                 variants={itemVariants}
-                className='w-full max-w-lg mx-auto m-10'
+                className='w-full justify-items-center max-w-lg mx-auto m-10 mb-10'
             >
-                <Card className="w-full border-accent-border border-2">
+                <Card className="base:w-10/12 sm:w-full border-accent-border border-2">
                     <form onSubmit={handleSubmit}>
                         <CardHeader>
                             <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight text-center">Email Me</CardTitle>
