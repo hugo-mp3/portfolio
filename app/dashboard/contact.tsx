@@ -116,7 +116,7 @@ export default function Contact() {
                 viewport={{ amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.3}}
                 variants={itemVariants}
-                className='w-full justify-items-center max-w-lg mx-auto m-10 mb-10 flex flex-col items-center'
+                className='w-full justify-items-center max-w-lg mx-auto m-10 mb-10 flex flex-col items-center content-center text-center'
             >
                 <Card className="base:w-10/12 sm:w-full border-accent-border border-2">
                     <form onSubmit={handleSubmit}>

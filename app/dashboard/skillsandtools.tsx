@@ -20,7 +20,30 @@ const itemVariants = {
     visible: { opacity: 1, x: 0 }
 };
 
+// Define the props type for SkillItem
+interface SkillItemProps {
+    icon: React.ElementType; // This allows passing a React component as an icon
+    tooltipText: string;      // Tooltip text
+    color: string;
+}
 
+// Skill item component using forwardRef for ref handling
+const SkillItem = React.forwardRef<HTMLDivElement, SkillItemProps>(({ icon: Icon, tooltipText, color }, ref) => (
+    <TooltipProvider>
+        <Tooltip delayDuration={30}>
+            <TooltipTrigger asChild>
+                <div ref={ref}>
+                    <Icon className={`h-[2.6rem] w-[2.6rem] ${color} hover:scale-125`} />
+                </div>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p className="leading-7 [&:not(:first-child)]:mt-6">{tooltipText}</p>
+            </TooltipContent>
+        </Tooltip>
+    </TooltipProvider>
+));
+
+SkillItem.displayName = 'SkillItem'; // Set display name for debugging
 
 
 export default function SkillsAndTools(){
@@ -48,269 +71,75 @@ export default function SkillsAndTools(){
                 >
                     <div className='grid base:grid-cols-4 base-1:grid-cols-6 sm:grid-cols-8 justify-items-center gap-x-0 gap-y-4 mb-10 mt-10'>
                         {/* html5 icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaHtml5 className='h-[2.6rem] w-[2.6rem] text-red-500 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">HTML5</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaHtml5} tooltipText="HTML5" color="text-red-500" />
                         {/* CSS3 icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaCss3Alt className='h-[2.6rem] w-[2.6rem] text-cyan-500 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">CSS3</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaCss3Alt} tooltipText="CSS3" color="text-cyan-500" />
+                        
                         {/* React icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaReact className='h-[2.6rem] w-[2.6rem] text-cyan-400 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">React.js</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaReact} tooltipText="React.js" color="text-cyan-400" />
+                        
                         {/* Python icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaPython className='h-[2.6rem] w-[2.6rem] text-amber-300 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Python</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaPython} tooltipText="Python" color="text-amber-300" />
+                        
                         {/* Java icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaJava className='h-[2.6rem] w-[2.6rem] text-red-800 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Java</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaJava} tooltipText="Java" color="text-red-800" />
+                        
                         {/* Node icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaNode className='h-[2.6rem] w-[2.6rem] text-lime-500 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Node.js</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaNode} tooltipText="Node.js" color="text-lime-500" />
+                        
                         {/* Windows icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaWindows className='h-[2.6rem] w-[2.6rem] text-sky-400 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Windows</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaWindows} tooltipText="Windows" color="text-sky-400" />
+                        
                         {/* Linux icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaLinux className='h-[2.6rem] w-[2.6rem] text-slate-500 hover:scale-125'/>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Linux</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaLinux} tooltipText="Linux" color="text-slate-500" />
+                        
                         {/* Git icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <FaGitAlt className='h-[2.6rem] w-[2.6rem] text-orange-600 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Git</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={FaGitAlt} tooltipText="Git" color="text-orange-600" />
+                        
                         {/* TailwindCSS icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <RiTailwindCssFill className='h-[2.6rem] w-[2.6rem] text-sky-300 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">TailwindCSS</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        {/* Nextjs icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <RiNextjsFill className='h-[2.6rem] w-[2.6rem] text-gray-800 dark:text-slate-100 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Next.js</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={RiTailwindCssFill} tooltipText="TailwindCSS" color="text-sky-300" />
+                        
+                        {/* Next.js icon/tooltip */}
+                        <SkillItem icon={RiNextjsFill} tooltipText="Next.js" color="text-gray-800 dark:text-slate-100" />
+                        
                         {/* Supabase icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <RiSupabaseFill className='h-[2.6rem] w-[2.6rem] text-green-500 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Supabase</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={RiSupabaseFill} tooltipText="Supabase" color="text-green-500" />
+                        
                         {/* JavaScript icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <IoLogoJavascript className='h-[2.6rem] w-[2.6rem] text-yellow-400 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">JavaScript</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        {/* Github icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <IoLogoGithub className='h-[2.6rem] w-[2.6rem] dark:text-gray-200 text-slate-900 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">GitHub</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={IoLogoJavascript} tooltipText="JavaScript" color="text-yellow-400" />
+                        
+                        {/* GitHub icon/tooltip */}
+                        <SkillItem icon={IoLogoGithub} tooltipText="GitHub" color="text-slate-900 dark:text-gray-200" />
+                        
                         {/* Express icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiExpress className='h-[2.6rem] w-[2.6rem] dark:text-gray-50 text-slate-800 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Express.js</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiExpress} tooltipText="Express.js" color="text-slate-800 dark:text-gray-50" />
+                        
                         {/* Flask icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiFlask className='h-[2.6rem] w-[2.6rem] text-slate-500 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Flask</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiFlask} tooltipText="Flask" color="text-slate-500" />
+                        
                         {/* SQLite icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiSqlite className='h-[2.6rem] w-[2.6rem] text-blue-400 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">SQLite</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiSqlite} tooltipText="SQLite" color="text-blue-400" />
+                        
                         {/* Vite icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiVite className='h-[2.6rem] w-[2.6rem] text-violet-400 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Vite</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiVite} tooltipText="Vite" color="text-violet-400" />
+                        
                         {/* Chakra UI icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiChakraui className='h-[2.6rem] w-[2.6rem] text-teal-400 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Chakra UI</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiChakraui} tooltipText="Chakra UI" color="text-teal-400" />
+                        
                         {/* Postman icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiPostman className='h-[2.6rem] w-[2.6rem] text-orange-500 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Postman</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiPostman} tooltipText="Postman" color="text-orange-500" />
+                        
                         {/* ShadCN UI icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <SiShadcnui className='h-[2.6rem] w-[2.6rem] text-gray-700 dark:text-slate-200 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">ShadCN</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={SiShadcnui} tooltipText="ShadCN" color="text-gray-700 dark:text-slate-200" />
+                        
                         {/* PostgreSQL icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <BiLogoPostgresql className='h-[2.6rem] w-[2.6rem] text-sky-800 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">PostgreSQL</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={BiLogoPostgresql} tooltipText="PostgreSQL" color="text-sky-800" />
+                        
                         {/* MongoDB icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <DiMongodb className='h-[2.6rem] w-[2.6rem] text-green-600 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">MongoDB</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={DiMongodb} tooltipText="MongoDB" color="text-green-600" />
+                        
                         {/* Docker icon/tooltip */}
-                        <TooltipProvider>
-                            <Tooltip delayDuration={30}>
-                                <TooltipTrigger asChild>
-                                    <GrDocker className='h-[2.6rem] w-[2.6rem] text-sky-400 hover:scale-125' />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p className="leading-7 [&:not(:first-child)]:mt-6">Docker</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <SkillItem icon={GrDocker} tooltipText="Docker" color="text-sky-400" />
                     </div>
                 </motion.div>                
             </div>
