@@ -56,7 +56,7 @@ SkillItem.displayName = 'SkillItem'; // Set display name for debugging
 export default function SkillsAndTools(){
 
     // Array to manage tooltip visibility for each skill
-    const [tooltipOpen, setTooltipOpen] = useState<boolean[]>(Array(22).fill(false));
+    const [tooltipOpen, setTooltipOpen] = useState<boolean[]>(Array(24).fill(false));
 
     // Function to handle the icon click
     const handleIconClick = (index: number) => {
