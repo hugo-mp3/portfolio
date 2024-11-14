@@ -43,11 +43,87 @@ export default function Contact() {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        //new implementation
+        try {
+            // Get the reCAPTCHA token
+            const token = await window.grecaptcha.execute(captchaKey, { action: 'LOGIN' });
+      
+            // Validate token with backend
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ recaptchaToken: token }),
+            });
+      
+            const data = await response.json();
+      
+            if (data.success === true) {
+              // If validation successful, send email
+              try {
+                await emailjs.send(
+                  emailjsServiceID,
+                  emailjsTemplateID,
+                  {
+                    from_name: formData.name,
+                    message: formData.message,
+                    reply_to: formData.email,
+                    'g-recaptcha-response': token
+                  },
+                  emailjsPublicKey
+                );
+      
+                // Handle successful email send
+                console.log('Email sent successfully');
+                // You might want to show a success message to the user
+                toast({
+                    title: "Message Successfully Sent",
+                    description: "Thank you for reaching out! I'll get back to you shortly."
+                });
+                
+                // Optionally reset the form
+                setFormData({
+                  name: '',
+                  email: '',
+                  message: ''
+                });
+      
+              } catch (emailError) {
+                console.error('Error sending email:', emailError);
+                toast({
+                    variant: "destructive",
+                    title: "Uh oh! Something went wrong.",
+                    description: "There was a problem with your request."
+                });
+              }
+            } else {
+              // Handle invalid recaptcha response
+              console.error('reCAPTCHA validation failed:', data.message);
+              toast({
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "reCAPTCHA validation failed."
+              });
+            }
+          } catch (error) {
+            console.error('Error during form submission:', error);
+            toast({
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "Error during form submission."
+            });
+          }
 
-        if (typeof window !== 'undefined' && window.grecaptcha) {
-            window.grecaptcha.execute(captchaKey, { action: 'submit' }).then((token) => {
+
+        //old implementation
+        /* if (typeof window !== 'undefined' && window.grecaptcha) {
+            window.grecaptcha.execute(captchaKey, { action: 'LOGIN' }).then((token) => {
+                
+
+
                 emailjs.send(
                     emailjsServiceID,     // Replace with your EmailJS service ID
                     emailjsTemplateID,    // Replace with your EmailJS template ID
@@ -75,12 +151,12 @@ export default function Contact() {
                     });
                 });
             });
-        }
+        } */
     };
 
     useEffect(() => {
         const script = document.createElement("script");
-        script.src = `https://www.google.com/recaptcha/api.js?render=${captchaKey}`; // Replace with your site key
+        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${captchaKey}`; // Replace with your site key
         script.async = true;
         script.defer = true;
         document.body.appendChild(script);
