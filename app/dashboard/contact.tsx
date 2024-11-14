@@ -70,8 +70,7 @@ export default function Contact() {
                   {
                     from_name: formData.name,
                     message: formData.message,
-                    reply_to: formData.email,
-                    'g-recaptcha-response': token
+                    reply_to: formData.email
                   },
                   emailjsPublicKey
                 );
