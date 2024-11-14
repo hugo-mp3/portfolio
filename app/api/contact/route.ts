@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import crypto from 'crypto';
+
 
 export async function POST(req: Request) {
   try {
@@ -136,7 +138,6 @@ async function createJWT(clientEmail: string, privateKey: string) {
   
   const signatureInput = `${encodedHeader}.${encodedClaim}`;
   
-  const crypto = require('crypto');
   const sign = crypto.createSign('RSA-SHA256');
   sign.update(signatureInput);
   const signature = sign.sign(privateKey, 'base64url');
